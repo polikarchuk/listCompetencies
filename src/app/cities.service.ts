@@ -1,7 +1,7 @@
-
 import { HttpClient } from "@angular/common/http";
 import {Inject, Injectable} from "@angular/core";
-import {map} from "rxjs/internal/operators";
+import {map} from 'rxjs/internal/operators';
+
 
 
 
@@ -11,20 +11,22 @@ export class CitiesService{
     getCities(){
         return this.http.get("https://roundlaw.com/api/v1/places/cities").pipe(
 
-            map(cities => {
+            map((cities:any[]) => {
                 return cities.map(city=>{
                     return{
-                        name:city.name,
-                        country:city.country
+                        name: city.name
 
-                    }
 
-                })
+                    };
+
+                });
 
             })
 
 
-        )
+
+
+        );
     }
 
 

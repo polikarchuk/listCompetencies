@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {CitiesService} from './cities.service';
-import {CitiesService} from './cities.service';
 import {CompetenciesService} from './competencies.service';
+import {CitiesService} from './cities.service';
+
 
 
 
@@ -31,7 +31,7 @@ export class AppComponent {
      this.citiesService.getCities().subscribe(cities=>{
        this.cities = cities;
      }),
-     this.competenciesService.getompetencies().subscribe( competencies=>{
+     this.competenciesService.getСompetencies().subscribe( competencies=>{
          this.competencies =  competencies;
      })
 
