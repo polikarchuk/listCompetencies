@@ -3,14 +3,15 @@ import { Inject, Injectable } from "@angular/core";
 import { map } from "rxjs/internal/operators";
 
 @Injectable()
-export class CitiesService {
+export class UsersService {
   constructor(@Inject(HttpClient) private http: HttpClient) {}
-  getCities() {
-    return this.http.get("https://roundlaw.com/api/v1/places/cities").pipe(
-      map((cities: any[]) => {
-        return cities.map(city => {
+  getUsers(competency_id: any, city_id: any) {
+    console.log(competency_id, city_id);
+    return this.http.get("https://roundlaw.com/api/v1/users").pipe(
+      map((users: any[]) => {
+        return users.map(user => {
           return {
-            name: city.name
+            ...user
           };
         });
       })

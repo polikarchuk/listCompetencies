@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">City</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="exampleFormControlSelect1" (change)="onSelect()" #cityInput>
                         <option *ngFor="let city of cities">{{city.name}}</option>
                     </select>
                 </div>
@@ -13,7 +13,7 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Competencies</label>
-                    <select class="form-control" id="exampleFormControlSelect2">
+                    <select class="form-control" id="exampleFormControlSelect2" (change)="onSelect()" #CompetenciesInput>
                         <option *ngFor="let competence of competencies">{{competence.name}}</option>
                     </select>
                 </div>
